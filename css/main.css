@@ -1,3 +1,12 @@
+:root {
+  --oranzine: #ff4622;
+  --plotis: 1000px;
+  --soninis-atstumas: calc((100% - var(--plotis)) / 2);
+  --main-width: calc(100% - var(var(--soninis-atstumas)));
+  --text-width: calc(var(--plotis) * 0.4);
+  --text-margin: calc(var(--plotis) * 0.1);
+  --img-width: calc(var(--plotis) * 0.5 + var(--soninis-atstumas));
+}
 body,
 body * {
   margin: 0;
@@ -6,14 +15,11 @@ body * {
   box-sizing: border-box;
   font-family: cursive;
 }
-main {
-  width: 800px;
-  margin-left: calc((100% - 800px) / 2);
-}
+
 header {
   display: inline-block;
-  width: 1000px;
-  margin-left: calc((100% - 1000px) / 2);
+  width: var(--plotis);
+  margin-left: var(--soninis-atstumas);
   margin-top: 20px;
 }
 header > img {
@@ -41,45 +47,55 @@ header > nav > a:first-child {
   border-bottom: 2px solid #741111;
 }
 header > nav > a:hover {
-  border-bottom: 2px solid #ff4622;
+  border-bottom: 2px solid var(--oranzine);
 }
 
 main {
-  margin-top: 80px;
-  width: 100%;
+  margin-top: 60px;
+  width: var(--main-width);
   display: inline-block;
+  margin-left: var(--soninis-atstumas);
 }
 main > div {
   float: left;
-  width: 40%;
-  margin-top: 30px;
-  margin-left: 30px;
+  width: var(--text-width);
+  margin-right: var(--text-margin);
+  margin-top: 50px;
 }
 main > div > h1 {
+  width: 100%;
   line-height: 40px;
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 main > div > h1 > span {
+  color: var(--oranzine);
   line-height: 40px;
-  font-size: 30px;
+  font-size: 45px;
   margin-bottom: 10px;
 }
 main > div > p {
+  width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 20px;
 }
 main > div > a {
+  display: inline-block;
   text-decoration: none;
-  color: black;
-  background-color: #ff4622;
-  border: 2px solid black;
-  padding: 5px 10px;
-  border-radius: 8px;
+  color: #ffff;
+  background-color: var(--oranzine);
+  border: 2px solid #d1583f;
+  padding: 10px 25px;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+
+main > div > a:hover {
+  background-color: #ffff;
+  color: var(--oranzine);
 }
 
 main > img {
   float: right;
-  width: 50%;
-  margin-right: 20px;
+  width: var(--img-width);
 }
